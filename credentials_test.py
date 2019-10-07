@@ -16,3 +16,7 @@ def test_init(self):
             '''
             confirms that initialisation of class Credentials happens as expected.Three parameters etc
             '''    
+
+
+if __name__ == '__main__':
+    unittest.main()            
