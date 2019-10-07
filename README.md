@@ -1,6 +1,6 @@
 # Project
  
- Password-Locker
+# Password-Locker
 
 ## Author 
 
@@ -9,16 +9,13 @@
 ## Description
 This is a python application that is used through the terminal. The application takes in user's password for various accounts and stores them. The user has to log in to access the kept details for various accounts created by them.The app has been build to also generate random passwords for users.
 
-## Behaviour Driven Development(BDD)
-| Behavior  |      Input       |  Output
-|-------------|----------------|---------------|
-|Run python3.6 on terminal|The users input their name, email and password to sign in.| Users are given options to sign in, login or exit the application
-|---------------|----------------|----------------|
-|               | Users create one account or multiple accounts for various  of passwords| Users receive options to create more accounts or exit app|
-|------------------|--------------|------------------|
-|                |Users can choose to login using their email addresses and passwords| Their accounts are displayed|
-|----------------|------------------|------------------|
-|                |Users have the option to create new accounts using random passwords| The application generates passwords|
+## BDD
+| Behaviour        | Input          | Output  |
+| ------------- |:-------------:| -----:|
+| Run python3.6 on terminal|The users input their name, email and password to sign in | Users are given options to sign in, login or exit the application| $1600 |
+|             |Users create one account or multiple accounts for various passwords storage | Their accounts are displayed |
+|             | Users can choose to login using their email addresses and passwords if they are not first time users | The application gives them the privilage to interract more with its features |
+|             | Users have the option to create new accounts using random passwords | The application generates passwords |
 
 * the user can request the app to generate a password for him/her.
 * The user can dispalay the accounts stored with their cridentials.
