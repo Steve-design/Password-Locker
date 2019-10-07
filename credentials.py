@@ -13,7 +13,7 @@ class Credentials:
      def save_credentials(self):
         Credentials.credentials_list.append(self) 
         '''
-        functions that saves credentials once defined
+        function that saves credentials once defined
         '''   
      @classmethod
      def create_credentials(account_name, login_detail , Password):
@@ -26,3 +26,12 @@ class Credentials:
         '''
         used to delete credentials 
         '''   
+
+     @classmethod
+     def find_account(cls, account_name):
+        '''
+        search for accounts
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.account_name == account_name:
+                return credentials     
