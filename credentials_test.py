@@ -22,6 +22,14 @@ def test_save_credentials(self):
         '''
         confirms if cridentials can be saved
         '''
+def test_saving_multiple_creds(self):
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("LinkedIn", "mzalendo23.com","AmendTime23")
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),4)
+        '''
+        Checks if saving multiple credentials is possible
+        '''        
 
 if __name__ == '__main__':
     unittest.main()            
