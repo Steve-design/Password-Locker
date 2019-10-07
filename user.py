@@ -26,6 +26,7 @@ class User:
         delete a user from our list of users
         '''
         User.user_list.remove(self)
+   
 
     def check_existing_user(self): 
         return User.check_existing_user(self) 
@@ -37,14 +38,17 @@ class User:
 	    '''
 	    return User.display_users(self)     
 
-    
     @classmethod
-    def find_user(cls, user_name, password):
-        '''
-        find user using search terms when logging in
-        '''  
-        
+    def find_by_password(user_name, password):
+        # '''
+        # Method that takes in a name and returns a name that matches that user_name.
+
+        # Args:
+        #     name: password to search for
+        # Returns :
+        #     name of person that matches the name.
+        # '''
+
         for user in cls.user_list:
-            if user.user_name == user_name and user.password == password:
-                verified_user = user
-                return  verified_user
+            if user.user_name == User:
+                return User

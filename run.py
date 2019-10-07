@@ -29,11 +29,11 @@ def delete_user(self):
 	User.delete_user(self)
 
         
-def find_user(email, password):
+def find_user(user_name, password):
 	'''
 	Function that finds user when one choses to log in.
 	'''
-	return  User.find_user(email, password)
+	return  User.find(user_name, password)
 
 
 def check_existing_user(self):
@@ -49,8 +49,8 @@ def display_users(self):
 	'''
 	return User.display_users(self)
 
-def new_credentials(account_name, login_detail , Password):
- 	new_credentials(save_credentials)
+# def new_credentials(account_name, login_detail , Password):
+#  	new_credentials(create_credentials)
 
 def create_credentials(account_name, login_detail , Password):
 
@@ -66,15 +66,6 @@ def save_credentials(self):
 	methods that saves credentials.
 	'''
 	return Credentials.credentials_list.append(self)
-
-	
-
-def create_credentials(save_credentials):
-	'''
-	function to create new user
-	'''
-	Credentials.create_credentials("account_name", "login_detail" , "Password")
-	
 
 def copy_User_credential():
 	'''
@@ -112,7 +103,7 @@ def main():
 	
 
 		else:
-			print("The details you gave do not match any account. Please enter the codes to Sign up and access App.")
+			print("The details you gave do not match any account. Please enter the codes to Sign up and enjoy our services.")
 			
 			code = input()
 
@@ -132,7 +123,7 @@ def main():
 		print(f"Welcome {user_name} to Password Locker. You are now logged in.")
 		print("\n")
 		
-		print("Use the following codes to proceed :\n create - create new account details,\n display - display accounts,\n find - find an account,\n exit - exit the Application")
+		print("Use the following codes to proceed :\n create - create new account details,\n display - display accounts,\n exit - exit the Application")
 		while True:
 			code = input()
 			if code == "create":
@@ -161,7 +152,7 @@ def main():
 					
 					
 				
-				create_credentials( save_credentials)
+				save_credentials(create_credentials(account,email,password))
 
 				print(f"You have successfully added an account with the following details\nAccount name: {account}\nLog in details used: {email}\nPassword: {password}.")
 				print("You can now create another account type in create,to display accounts created type display,to exit type exit")
@@ -187,7 +178,7 @@ def main():
 
 
 	else:
-		print("Dear customer,you have entered an invalid codes. Kindly enter the following  codes to access Password Safe:\n sign - Sign Up,")
+		print("Dear customer,you have entered invalid codes. Kindly enter the following  codes to access Password Locker:\n sign - Sign Up,")
 
 
 if __name__ == '__main__':

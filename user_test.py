@@ -62,7 +62,7 @@ class TestUser(unittest,TestCase):
         test_user = User("user_name", "email", "password")
         test_user.save_user()
         self.find_user.test_user("email", "mzalendo23")  
-        self.assertEqual(find_user.email, new_user.email)           
+        self.assertEqual(find_user.email, new_user.user_name)           
 
     if __name__ == "__main__":
      unittest.main()    

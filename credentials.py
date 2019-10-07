@@ -12,21 +12,22 @@ class Credentials:
         '''
 
      def save_credentials(self):
-        Credentials.credentials_list.append(self) 
         '''
         function that saves credentials once defined
-        '''   
-     @classmethod
-     def create_credentials(account_name, login_detail , Password):
+        ''' 
+        Credentials.credentials_list.append(self) 
 
-        new_credentials = Credentials(account_name, login_detail , Password)
-        return new_credentials   
+    #  @classmethod
+    #  def create_credentials(account_name, login_detail , Password):
+
+    #     new_credentials = Credentials(account_name, login_detail , Password)
+    #     return new_credentials   
 
      def delete_credentials(self):        
-        Credentials.credentials_list.remove(self) 
         '''
         used to delete credentials 
-        '''   
+        '''  
+        Credentials.credentials_list.remove(self)  
 
      @classmethod
      def find_account(cls, account_name):
