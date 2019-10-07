@@ -15,7 +15,12 @@ def test_init(self):
             self.assertEqual(self.new_credentials.Password, "mzalendo23")
             '''
             confirms that initialisation of class Credentials happens as expected.Three parameters etc
-            '''    
+            '''  
+def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Credentials.credentials_list = []              
 def test_save_credentials(self):
         self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
