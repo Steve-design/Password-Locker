@@ -25,21 +25,31 @@ class TestUser(unittest,TestCase):
             self.assertEqual(self.new_user.email,"smzalendo31@gmail.com")
             self.assertEqual(self.new_user.password,"mzalendo23")   
 
-     def test_save_user(self):
+    def test_save_user(self):
         '''
-            test case to test if new user  is saved into the contact list
+            test case to check if user is saved
         '''
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)
 
  
-        #check whether you can store more than one user..............2
+        
     
     def test_save_mutliple_users(self):
         '''
-        test case to see if we can save multiple users.
+        test case for multiple users
         '''
         self.new_user.save_user()
         test_user = User("username", "email", "password")
         test_user.save_user()
-        self.assertEqual(len(User.user_list), 2)        
+        self.assertEqual(len(User.user_list), 2)   
+
+    def test_delete_user(self):
+        '''
+        test case to see if we can delete a user
+        '''
+        self.new_user.save_user()
+        test_user = User("username", "email", "password")
+        test_user.save_user()
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list), 1)         
