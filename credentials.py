@@ -10,3 +10,8 @@ class Credentials:
         save our accounts passwords here.
         '''
 
+     def save_credentials(self):
+        Credentials.credentials_list.append(self) 
+        '''
+        functions that saves credentials once defined
+        '''   
