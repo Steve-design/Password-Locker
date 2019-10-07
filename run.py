@@ -1,8 +1,8 @@
 #!/usr/bin/env python3.6
 from user import User
 from credentials import Credentials
-from pyfiglet import Figlet
-import randon
+
+import random
 import string
 import pyperclip
 
@@ -26,7 +26,7 @@ def delete_user(self):
 	'''
 	Function that deletes user
 	'''
-	User.delete_user()
+	User.delete_user(self)
 
         
 def find_user(email, password):
@@ -36,18 +36,18 @@ def find_user(email, password):
 	return  User.find_user(email, password)
 
 
-def check_existing_user(user):
+def check_existing_user(self):
     '''
     Function that checks for existing Users
     '''
-    return User.check_existing_user(user)
+    return User.check_existing_user(self)
 
     
-def display_users():
+def display_users(self):
 	'''
 	function that saves Users
 	'''
-	return User.display_users()
+	return User.display_users(self)
 
 def new_credentials(account_name, login_detail , Password):
  	new_credentials(save_credentials)
@@ -61,15 +61,15 @@ def create_credentials(account_name, login_detail , Password):
 
 
 
-def save_credentials():
+def save_credentials(self):
 	'''
 	methods that saves credentials.
 	'''
-	return Credentials.save_credentials()
+	return Credentials.credentials_list.append(self)
 
 	
 
-def create_credentials( save_credentials):
+def create_credentials(save_credentials):
 	'''
 	function to create new user
 	'''
@@ -81,7 +81,7 @@ def copy_User_credential():
 	Function that copies cridentials on clipboard
 	'''
 	return User.find_user(email)
-pyperclip.copy(user_found.email)
+
 
 def passGen(size = 8, char=string.ascii_uppercase + string.ascii_lowercase + string.digits):
     gen = ''.join(random.choice(char) for _ in range(size))
@@ -89,8 +89,8 @@ def passGen(size = 8, char=string.ascii_uppercase + string.ascii_lowercase + str
 
 def main():
 
-	# custom_fig = Figlet(font='speed')
-	# print(custom_fig.renderText('PASSWORD SAFE'))
+	
+	
 
 	print("Welcome to Password Locker. Your safety is our priority. Check through the content then enter the shortcode to navigate:\n sign ---- to sign up,\n log ----   to log In,\n  exit ---- to exit ")
 	
@@ -112,7 +112,7 @@ def main():
 	
 
 		else:
-			print("The details you gave do not match any account. Please enter the shortcode sign, to Sign up and access Application.")
+			print("The details you gave do not match any account. Please enter the codes to Sign up and access App.")
 			
 			code = input()
 
@@ -178,7 +178,7 @@ def main():
 
 		
 	elif code =="exit":
-		        print("Logging Out ... .  .   .    .     .      .         .        .")
+		        print("Logging Out ...")
 
 		        print("\n")	
 		        print("Enjoy the rest of your day. Asante!")
