@@ -16,5 +16,7 @@ class Credentials:
         functions that saves credentials once defined
         '''   
 
-    
-       
+     def create_credentials(account_name, login_detail , Password):
+
+        new_credentials = Credentials(account_name, login_detail , Password)
+        return new_credentials   
