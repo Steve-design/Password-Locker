@@ -16,7 +16,12 @@ def test_init(self):
             '''
             confirms that initialisation of class Credentials happens as expected.Three parameters etc
             '''    
-
+def test_save_credentials(self):
+        self.new_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
+        '''
+        confirms if cridentials can be saved
+        '''
 
 if __name__ == '__main__':
     unittest.main()            
